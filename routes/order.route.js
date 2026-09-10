@@ -23,6 +23,13 @@ router.patch(
   cancelOrderByUser,
   getSalesReport,
 );
+router.patch(
+  "/:id/cancel",
+  authenticate,
+  authorize("user"),
+  cancelOrderByUser,
+  getSalesReport,
+);
 
 // Admin routes
 router.get("/admin", authenticate, authorize("admin"), getAllOrders);
